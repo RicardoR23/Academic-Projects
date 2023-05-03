@@ -1,0 +1,48 @@
+QUESTION 1:
+remove(k)
+        if root = null 
+            return root
+
+// traverse the tree
+// if key is less than current root, traverse the left subtree
+        if key < root.key  
+            root.left = deleteNode(root.left, key)
+
+// if key is greater than current root, traverse the right subtree    
+         else if (key > root.key)
+            root.right = deleteNode(root.right, key)
+        else 
+
+// node contains only one child
+// if root has no left child, return right            
+            if root.left = null 
+                return root.right;
+
+// if root has no right child, return left
+            else if root.right = null
+                return root.left;
+
+// initially minval = root (starting point)
+            temp root.right.key
+
+// find minval by continuing as long as root is not null
+            while root.right.left != null 
+
+// update minval to key of left child and update root node to left child node
+// traverse down the left side
+                temp = root.right.left.key
+                root = root.right.left
+            root.key = temp
+
+// Call method and delete the inorder successor
+            root.right = deleteNode(root.right, root.key)
+        return root
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+QUESTION 9:
+I found that in #5 the search for #1 was shorter than #8. However the opposite happened when searching for 15. 
+When searching for 1 in the first tree, the 1 gets found immdeitely whereas in the second tree it has to go all of the way down the left leafs of the tree.
+When searching for 15 in the first one, it has to go all of the way down the entire tree due to the leafs being inserted in that order. 
+However when searching for 15 in the second one, it only had to search through a few of the leafs down the right side. 
+In terms of best/worst case, searching for 1 in the first tree is best-case because the root is the key. However, searching for 15 is the worst case. 
+In the second tree, both of them appear to be average cases of likely logn.
