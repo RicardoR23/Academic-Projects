@@ -53,6 +53,10 @@ int main(void) {
         }
     }
 }
+
+// The integer entered by the user is stored in a variable called "temp". 
+// The variable "top2" is then incremented by 1 and 
+// the value of "temp" is assigned to the element in the stack at the current top2 index. 
 void push(int stack[]) {
     int temp;
 
@@ -65,10 +69,15 @@ void push(int stack[]) {
         stack[top2] = temp;
     }
 }
+
+// In the pop function, check if the stack is empty and if so, display a message saying so. 
+// If not, display the element at the top of the stack and 
+// update the "top2" variable to reflect the new top of the stack
 void pop(int stack[]) {
     if (top2 < 0) {
         printf("\n Stack is empty");
     } else {
+// Last in First Out, remove top element from Stack
         printf("\n The pushed integer is %d", stack[top2]);
         top2--;
     }
