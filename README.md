@@ -1,61 +1,50 @@
-<h1>SortAlgorithms </h1>
+# CreatorKart Gear
 
-Project consists of developing Merge Sort, Quick Sort, and Heap Sort algorithms.
-<br />
+CreatorKart Gear is a fully documented PHP + MySQL course project that demonstrates a responsive e-commerce website with:
 
+- public and private areas
+- customer registration and authentication
+- product catalog with 20 records
+- cart, checkout, and order history
+- ratings and reviews
+- dynamic quote and support forms
+- admin dashboard
+- 3 site-wide templates
+- monitoring page
+- help wiki
+- installation documentation
+- local image, video, and audio assets
 
-<h3>Language(s) Used</h3>
+## Demo credentials
 
-- <b>Java</b> 
+- **Admin**
+  - Email: `admin@creatorkart.local`
+  - Password: `Admin123!`
 
-<h3>Program walk-through:</h3>
+- **Customer**
+  - Email: `customer@creatorkart.local`
+  - Password: `Admin123!`
 
-<p align="center">
-Enter sequence length: <br/>
-<img src="https://i.imgur.com/LUvBEmF.png" height="80%" width="80%" alt="Enter sequence length"/>
-<br />
-<br />
-Enter sequence elements:  <br/>
-<img src="https://i.imgur.com/7QAjC4R.png" height="80%" width="80%" alt="Enter sequence elements"/>
-<br />
-<br />
-Output: <br/>
-<img src="https://i.imgur.com/eUlS7Wh.png" height="80%" width="80%" alt="Sequences Sorted"/>
-</p>
+## Folder map
 
-<h1>Connect 4 </h1>
+- `index.php` - storefront landing page
+- `catalog.php` - searchable product catalog
+- `product.php` - generic product page
+- `product-01.php` to `product-20.php` - unique product entry pages
+- `quote.php` - dynamic setup bundle form
+- `support.php` - dynamic support form with upload
+- `profile.php`, `orders.php`, `cart.php`, `checkout.php` - private customer features
+- `admin/` - admin dashboard, products, users, orders, requests, settings
+- `help/` - 5 static wiki/help pages
+- `sql/schema.sql` - full MySQL schema and seed data
+- `docs/INSTALL.md` - deployment steps
+- `docs/DATABASE-DESIGN.md` - database explanation
+- `docs/GRADING-CHECKLIST.md` - rubric mapping
+- `.gitignore` and `docs/GITHUB-SETUP.md` - repository guidance
 
-Project consists of developing Connect 4 using the command line. The game works by using nested iteration on multidimensional arrays. The game checks for a win after each player makes a move. Player 1 is represented by X and player 2 is represented by O.
-<br />
+## Notes
 
-
-<h3>Language(s) Used</h3>
-
-- <b>C</b> 
-
-<h3>Program walk-through:</h3>
-
-<p align="center">
-Game Start: <br/>
-<img src="https://i.imgur.com/wo13FdS.png" height="80%" width="80%" alt="Start"/>
-<br />
-<br />
-Player 1 Move:  <br/>
-<img src="https://i.imgur.com/wo13FdS.png" height="80%" width="80%" alt="Player 1"/>
-<br />
-<br />
-Player 2 Move: <br/>
-<img src="https://i.imgur.com/x9o4wHq.png" height="80%" width="80%" alt="Player 2"/>
-<br />
-<br />
-Vertical Win: <br/>
-<img src="https://i.imgur.com/Gw1w0TK.png" height="80%" width="80%" alt="Vertical"/>
-<br />
-<br />
-Horizontal Win: <br/>
-<img src="https://i.imgur.com/LUZzJun.png" height="80%" width="80%" alt="Horizontal"/>
-<br />
-<br />
-Diagonal Win: <br/>
-<img src="https://i.imgur.com/NQnGE4E.png" height="80%" width="80%" alt="Diagonal"/>
-</p>
+- Update `config.php` with your MySQL credentials before deployment.
+- Upload the full folder structure to `myweb.cs.uwindsor.ca` with FileZilla.
+- Import `sql/schema.sql` into your MySQL database.
+- The monitor page is useful for proving service status during gradng.
