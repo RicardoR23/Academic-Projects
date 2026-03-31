@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">SnapCast Capture Card</title>
+  <desc id="desc">Illustrated placeholder image for SnapCast Capture Card.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b4332"/>
+      <stop offset="100%" stop-color="#95d5b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="url(#g)"/>
+  <circle cx="720" cy="110" r="85" fill="rgba(255,255,255,0.16)"/>
+  <circle cx="160" cy="560" r="135" fill="rgba(255,255,255,0.12)"/>
+  <rect x="120" y="130" rx="28" ry="28" width="660" height="440" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.35)" stroke-width="4"/>
+  <text x="450" y="290" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" fill="white" font-weight="700">SnapCast Capture Card</text>
+  <text x="450" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="white" opacity="0.9">Streaming</text>
+  <text x="450" y="430" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="white" opacity="0.9">CreatorKart Gear Collection</text>
+</svg>

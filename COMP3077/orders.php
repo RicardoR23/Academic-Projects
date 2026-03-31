@@ -1,46 +1,49 @@
 <?php
-require_once __DIR__ . '/includes/bootstrap.php';
-require_login();
+require_once __DIR__ . '/../includes/bootstrap.php';
+require_admin();
 
 $db = db();
 $orders = [];
-
 if ($db) {
-    $stmt = $db->prepare("SELECT * FROM orders WHERE user_id = ? ORDER BY created_at DESC");
-    $userId = current_user()['id'];
-    $stmt->bind_param('i', $userId);
-    $stmt->execute();
-    $orders = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $result = $db->query("SELECT * FROM orders ORDER BY created_at DESC");
+    $orders = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 }
 
-$pageKey = 'orders';
-$pageTitle = page_title('Order History');
-$pageDescription = 'Track previous CreatorKart Gear orders.';
-include __DIR__ . '/includes/header.php';
+$pageKey = 'admin';
+$pageTitle = page_title('Admin Orders');
+$pageDescription = 'Admin order history and tracking.';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/_nav.php';
 ?>
 <section class="section-head">
     <div>
-        <p class="eyebrow">Order History</p>
-        <h1>Your orders</h1>
+        <p class="eyebrow">Orders</p>
+        <h1>Customer orders</h1>
     </div>
-    <a href="catalog.php">Shop again</a>
 </section>
 
-<?php if ($orders): ?>
-    <div class="stack-grid">
-        <?php foreach ($orders as $order): ?>
-            <article class="content-panel">
-                <h2><?= e($order['order_number']) ?></h2>
-                <p><strong>Status:</strong> <?= e($order['status']) ?></p>
-                <p><strong>Total:</strong> <?= currency((float) $order['total_amount']) ?></p>
-                <p><strong>Placed:</strong> <?= e($order['created_at']) ?></p>
-                <p><strong>Shipping address:</strong> <?= e($order['shipping_address']) ?></p>
-            </article>
-        <?php endforeach; ?>
-    </div>
-<?php else: ?>
-    <section class="content-panel">
-        <p>You do not have any orders yet.</p>
-    </section>
-<?php endif; ?>
-<?php include __DIR__ . '/includes/footer.php'; ?>
+<div class="table-wrap">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Order #</th>
+                <th>User ID</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($orders as $order): ?>
+                <tr>
+                    <td><?= e($order['order_number']) ?></td>
+                    <td><?= (int) $order['user_id'] ?></td>
+                    <td><?= currency((float) $order['total_amount']) ?></td>
+                    <td><?= e($order['status']) ?></td>
+                    <td><?= e($order['created_at']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

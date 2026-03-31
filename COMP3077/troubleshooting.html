@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Troubleshooting</title><style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f8fafc;color:#0f172a;margin:0;line-height:1.6}
+header,main,footer{max-width:980px;margin:auto;padding:24px}
+nav a{margin-right:14px;color:#1d4ed8;text-decoration:none}
+.card{background:#fff;border:1px solid #cbd5e1;border-radius:14px;padding:20px;margin:18px 0}
+code,pre{background:#e2e8f0;padding:2px 6px;border-radius:6px}
+h1,h2{line-height:1.2}
+ul,ol{padding-left:24px}
+</style></head><body>
+<header><nav>
+<a href="index.html">Help Home</a>
+<a href="site-tour.html">Site Tour</a>
+<a href="shopping-guide.html">Shopping Guide</a>
+<a href="account-and-orders.html">Account & Orders</a>
+<a href="admin-guide.html">Admin Guide</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+</nav><h1>Troubleshooting</h1></header>
+<main>
+<section class="card"><h2>If the database is offline</h2><ol><li>Open <code>config.php</code> and update the MySQL host, database name, username, and password.</li><li>Import <code>sql/schema.sql</code> into phpMyAdmin or the MySQL command line.</li><li>Refresh the monitor page.</li></ol></section>
+<section class="card"><h2>If file uploads fail</h2><p>Make sure the <code>uploads</code> folder exists and is writable on the server.</p></section>
+<section class="card"><h2>If the theme does not change</h2><p>Confirm that the <code>site_settings</code> table exists and contains the <code>active_theme</code> record. Then clear your browser cache.</p></section>
+<section class="card"><h2>If pages show missing styles</h2><p>Confirm that <code>assets/css/style.css</code> and <code>assets/js/app.js</code> were uploaded in the same folder structure as the PHP files.</p></section>
+</main><footer><p>Troubleshooting guide complete.</p></footer></body></html>
